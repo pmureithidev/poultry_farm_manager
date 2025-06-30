@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="farm-register-container">
+    <div class="farm-register-header">
+        <div class="farm-decoration">
+            <div class="chicken-icon">🐔</div>
+        </div>
+        <h2>Create Your Farm Account</h2>
+        <p>Start managing your poultry business efficiently</p>
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <!-- Farm Name -->
+        <div class="farm-form-group">
+            <label for="id_farm_name">Farm Name</label>
+            <input type="text" name="farm_name" id="id_farm_name" class="farm-form-control"
+                placeholder="Tim's Poultry" value="{{ form.farm_name.value|default:'' }}" required>
+            {% if form.farm_name.errors %}
+            <span class="farm-error">{{ form.farm_name.errors.0 }}</span>
+            {% endif %}
+        </div>
+
+        <!-- Phone Number -->
+        <div class="farm-form-group">
+            <label for="id_phone">Phone Number</label>
+            <input type="tel" name="phone" id="id_phone" class="farm-form-control" placeholder="+254712345678"
+                value="{{ form.phone.value|default:'' }}" required>
+            {% if form.phone.errors %}
+            <span class="farm-error">{{ form.phone.errors.0 }}</span>
+            {% endif %}
+        </div>
+
+        <!-- Username -->
+        <div class="farm-form-group">
+            <label for="id_username">Username</label>
+            <input type="text" name="username" id="id_username" class="farm-form-control"
+                placeholder="Choose a username" value="{{ form.username.value|default:'' }}" required>
+            {% if form.username.errors %}
+            <span class="farm-error">{{ form.username.errors.0 }}</span>
+            {% endif %}
+        </div>
+
+        <!-- Password -->
+        <div class="farm-form-group">
+            <label for="id_password1">Password</label>
+            <input type="password" name="password1" id="id_password1" class="farm-form-control"
+                placeholder="At least 8 characters" required>
+            {% if form.password1.errors %}
+            <span class="farm-error">{{ form.password1.errors.0 }}</span>
+            {% endif %}
+            <div style="font-size: 0.85rem; color: #666; margin-top: 5px;">
+                Your password must contain at least 8 characters
+            </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="farm-form-group">
+            <label for="id_password2">Confirm Password</label>
+            <input type="password" name="password2" id="id_password2" class="farm-form-control"
+                placeholder="Repeat your password" required>
+            {% if form.password2.errors %}
+            <span class="farm-error">{{ form.password2.errors.0 }}</span>
+            {% endif %}
+        </div>
+
+        <button type="submit" class="farm-btn">Register Farm</button>
+
+        <div class="farm-form-footer">
+            <p>Already have an account? <a href="{% url 'login' %}">Sign In</a></p>
+        </div>
+    </form>
+</div>
+{% endblock %}

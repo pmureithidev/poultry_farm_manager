@@ -1,0 +1,123 @@
+/* Farm-themed color palette */
+:root {
+    --farm-green: #4CAF50;
+    --farm-brown: #8D6E63;
+    --farm-cream: #FFF8E1;
+    --farm-red: #F44336;
+    --farm-blue: #2196F3;
+}
+
+/* Form container styling */
+.farm-register-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid var(--farm-green);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.farm-register-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.farm-register-header h2 {
+    color: var(--farm-green);
+    margin-bottom: 0.5rem;
+}
+
+.farm-register-header p {
+    color: var(--farm-brown);
+}
+
+/* Form styling */
+.farm-form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.farm-form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.farm-form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+.farm-form-control:focus {
+    border-color: var(--farm-green);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+/* Button styling */
+.farm-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--farm-green);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+.farm-btn:hover {
+    background-color: #3d8b40;
+}
+
+/* Form footer */
+.farm-form-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #666;
+}
+
+.farm-form-footer a {
+    color: var(--farm-green);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Error styling */
+.farm-error {
+    color: var(--farm-red);
+    margin-top: 5px;
+    font-size: 14px;
+    display: block;
+}
+
+/* Farm-themed decorations */
+.farm-decoration {
+    text-align: center;
+    margin: 1rem 0 2rem;
+}
+
+.chicken-icon {
+    font-size: 3rem;
+    color: var(--farm-brown);
+}
+
+/* Responsive design */
+@media (max-width: 576px) {
+    .farm-register-container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
